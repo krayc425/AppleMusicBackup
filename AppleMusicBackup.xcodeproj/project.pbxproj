@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		24013E192511DFA80009C25A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24013E182511DFA80009C25A /* AppDelegate.swift */; };
 		24013E1B2511DFA80009C25A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24013E1A2511DFA80009C25A /* SceneDelegate.swift */; };
-		24013E1D2511DFA80009C25A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24013E1C2511DFA80009C25A /* ViewController.swift */; };
 		24013E202511DFA80009C25A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24013E1E2511DFA80009C25A /* Main.storyboard */; };
 		24013E222511DFAB0009C25A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24013E212511DFAB0009C25A /* Assets.xcassets */; };
 		24013E252511DFAB0009C25A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24013E232511DFAB0009C25A /* LaunchScreen.storyboard */; };
 		24013E2D2511E03E0009C25A /* AppleMusicAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24013E2C2511E03E0009C25A /* AppleMusicAPI.swift */; };
 		24177F8A2511E08B00CED18A /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24177F892511E08B00CED18A /* SongModel.swift */; };
 		24177F8C2511E40000CED18A /* DeveloperToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24177F8B2511E40000CED18A /* DeveloperToken.swift */; };
+		249BB5EA25132C37005A0355 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BB5E925132C37005A0355 /* SongTableViewCell.swift */; };
+		249BB5EF25132DE1005A0355 /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BB5EE25132DE1005A0355 /* SongTableViewController.swift */; };
 		F9CB8691D2EE639F49A6F5B6 /* Pods_AppleMusicBackup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3020C8A5766081F8A7A488 /* Pods_AppleMusicBackup.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,7 +24,6 @@
 		24013E152511DFA80009C25A /* AppleMusicBackup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleMusicBackup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24013E182511DFA80009C25A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24013E1A2511DFA80009C25A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		24013E1C2511DFA80009C25A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		24013E1F2511DFA80009C25A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24013E212511DFAB0009C25A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24013E242511DFAB0009C25A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,6 +31,8 @@
 		24013E2C2511E03E0009C25A /* AppleMusicAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleMusicAPI.swift; sourceTree = "<group>"; };
 		24177F892511E08B00CED18A /* SongModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
 		24177F8B2511E40000CED18A /* DeveloperToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperToken.swift; sourceTree = "<group>"; };
+		249BB5E925132C37005A0355 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
+		249BB5EE25132DE1005A0355 /* SongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewController.swift; sourceTree = "<group>"; };
 		3EF0261309E38CC31D8693E6 /* Pods-AppleMusicBackup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleMusicBackup.debug.xcconfig"; path = "Target Support Files/Pods-AppleMusicBackup/Pods-AppleMusicBackup.debug.xcconfig"; sourceTree = "<group>"; };
 		5A8939DDCA6093EDC2356938 /* Pods-AppleMusicBackup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleMusicBackup.release.xcconfig"; path = "Target Support Files/Pods-AppleMusicBackup/Pods-AppleMusicBackup.release.xcconfig"; sourceTree = "<group>"; };
 		6F3020C8A5766081F8A7A488 /* Pods_AppleMusicBackup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppleMusicBackup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,13 +74,14 @@
 				24013E182511DFA80009C25A /* AppDelegate.swift */,
 				24013E1A2511DFA80009C25A /* SceneDelegate.swift */,
 				24013E2C2511E03E0009C25A /* AppleMusicAPI.swift */,
+				24177F8B2511E40000CED18A /* DeveloperToken.swift */,
+				249BB5EE25132DE1005A0355 /* SongTableViewController.swift */,
+				249BB5E925132C37005A0355 /* SongTableViewCell.swift */,
 				24177F892511E08B00CED18A /* SongModel.swift */,
-				24013E1C2511DFA80009C25A /* ViewController.swift */,
 				24013E1E2511DFA80009C25A /* Main.storyboard */,
 				24013E212511DFAB0009C25A /* Assets.xcassets */,
 				24013E232511DFAB0009C25A /* LaunchScreen.storyboard */,
 				24013E262511DFAB0009C25A /* Info.plist */,
-				24177F8B2511E40000CED18A /* DeveloperToken.swift */,
 			);
 			path = AppleMusicBackup;
 			sourceTree = "<group>";
@@ -215,11 +218,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24013E1D2511DFA80009C25A /* ViewController.swift in Sources */,
 				24013E192511DFA80009C25A /* AppDelegate.swift in Sources */,
 				24177F8C2511E40000CED18A /* DeveloperToken.swift in Sources */,
+				249BB5EA25132C37005A0355 /* SongTableViewCell.swift in Sources */,
 				24013E1B2511DFA80009C25A /* SceneDelegate.swift in Sources */,
 				24013E2D2511E03E0009C25A /* AppleMusicAPI.swift in Sources */,
+				249BB5EF25132DE1005A0355 /* SongTableViewController.swift in Sources */,
 				24177F8A2511E08B00CED18A /* SongModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,7 +300,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -350,7 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -365,15 +369,17 @@
 			baseConfigurationReference = 3EF0261309E38CC31D8693E6 /* Pods-AppleMusicBackup.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VEBQ28K9EA;
 				INFOPLIST_FILE = AppleMusicBackup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.krayc.AppleMusicBackup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krayc.AMBackup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = AMBackup;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -384,15 +390,17 @@
 			baseConfigurationReference = 5A8939DDCA6093EDC2356938 /* Pods-AppleMusicBackup.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VEBQ28K9EA;
 				INFOPLIST_FILE = AppleMusicBackup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.krayc.AppleMusicBackup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krayc.AMBackup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = AMBackup;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

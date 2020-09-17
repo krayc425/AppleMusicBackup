@@ -7,5 +7,7 @@ target 'AppleMusicBackup' do
 
   # Pods for AppleMusicBackup
   pod 'SwiftyJSON'
+  pod 'Kingfisher'
+  pod 'SVProgressHUD'
 
 end

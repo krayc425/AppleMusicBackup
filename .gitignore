@@ -89,5 +89,5 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-# musictoken.py
-# AppleMusicBackup/DeveloperToken.swift
+musictoken.py
+AppleMusicBackup/DeveloperToken.swift
