@@ -85,9 +85,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ZJm-RW-gsp">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="aBr-An-qxg">
+                        <leftBarButtonItems>
+                            <barButtonItem systemItem="refresh" id="aBr-An-qxg">
+                                <connections>
+                                    <action selector="backupAction:" destination="sUH-De-ILT" id="59F-iK-fev"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="action" id="9jl-nn-AWa">
+                                <connections>
+                                    <action selector="exportToJSONAction:" destination="sUH-De-ILT" id="31a-7h-z22"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="pUT-mA-Et4">
                             <connections>
-                                <action selector="backupAction:" destination="sUH-De-ILT" id="59F-iK-fev"/>
+                                <action selector="importFromJSONAction:" destination="sUH-De-ILT" id="jtS-Kj-uIT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
