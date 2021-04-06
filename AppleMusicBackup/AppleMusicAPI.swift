@@ -39,14 +39,16 @@ class AppleMusicAPI {
                     return
                 }
                 if let token = receivedToken {
-                    for id in ids {
+                    let iter = Int(ceil(Double(ids.count) / 100.0))
+                    for i in 0..<iter {
+                        let currIds = ids[i * 100..<min((i+1) * 100, total)]
                         let playListURL = AppleMusicAPI.baseURL + "/v1/me/library"
                         var request = URLRequest(url: URL(string: playListURL)!)
                         request.httpMethod = "POST"
                         request.addValue("Bearer \(developerToken)", forHTTPHeaderField: "Authorization")
                         request.addValue(token, forHTTPHeaderField: "Music-User-Token")
                         let parameter: [String: Any] = [
-                            "ids[songs]": id
+                            "ids[songs]": currIds.joined(separator: ",")
                         ]
                         request.httpBody = parameter.percentEncoded()
                         URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -55,10 +57,11 @@ class AppleMusicAPI {
                             }
                             if let httpResponse = response as? HTTPURLResponse {
                                 if httpResponse.statusCode == 202 {
-                                    success += 1
+                                    success += currIds.count
                                 }
                             }
-                            SVProgressHUD.showProgress(Float(success) / Float(total))
+                            let progress = Float(success) / Float(total)
+                            print("Progress \(String(format: "%.2f%%", 100 * progress)))")
                         }.resume()
                     }
                 }
@@ -79,7 +82,7 @@ class AppleMusicAPI {
                     var musicURL: String? = "/v1/me/library/songs"
                     let semaphore = DispatchSemaphore(value: 0)
                     while let url = musicURL, !url.isEmpty {
-                        print("Fetching \(url) \(resultSongs.count)")
+                        print("Fetching \(url) with \(resultSongs.count) items")
                         var musicRequest = URLRequest(url: URL(string: AppleMusicAPI.baseURL + url)!)
                         musicRequest.httpMethod = "GET"
                         musicRequest.addValue("Bearer \(developerToken)", forHTTPHeaderField: "Authorization")
