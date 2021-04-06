@@ -15,6 +15,7 @@
 		24013E2D2511E03E0009C25A /* AppleMusicAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24013E2C2511E03E0009C25A /* AppleMusicAPI.swift */; };
 		24177F8A2511E08B00CED18A /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24177F892511E08B00CED18A /* SongModel.swift */; };
 		24177F8C2511E40000CED18A /* DeveloperToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24177F8B2511E40000CED18A /* DeveloperToken.swift */; };
+		24899F84261C4D2300C83B56 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24899F83261C4D2300C83B56 /* DictionaryExtension.swift */; };
 		249BB5EA25132C37005A0355 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BB5E925132C37005A0355 /* SongTableViewCell.swift */; };
 		249BB5EF25132DE1005A0355 /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BB5EE25132DE1005A0355 /* SongTableViewController.swift */; };
 		F9CB8691D2EE639F49A6F5B6 /* Pods_AppleMusicBackup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3020C8A5766081F8A7A488 /* Pods_AppleMusicBackup.framework */; };
@@ -31,6 +32,7 @@
 		24013E2C2511E03E0009C25A /* AppleMusicAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleMusicAPI.swift; sourceTree = "<group>"; };
 		24177F892511E08B00CED18A /* SongModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
 		24177F8B2511E40000CED18A /* DeveloperToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperToken.swift; sourceTree = "<group>"; };
+		24899F83261C4D2300C83B56 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		249BB5E925132C37005A0355 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		249BB5EE25132DE1005A0355 /* SongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewController.swift; sourceTree = "<group>"; };
 		3EF0261309E38CC31D8693E6 /* Pods-AppleMusicBackup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleMusicBackup.debug.xcconfig"; path = "Target Support Files/Pods-AppleMusicBackup/Pods-AppleMusicBackup.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				249BB5EE25132DE1005A0355 /* SongTableViewController.swift */,
 				249BB5E925132C37005A0355 /* SongTableViewCell.swift */,
 				24177F892511E08B00CED18A /* SongModel.swift */,
+				24899F83261C4D2300C83B56 /* DictionaryExtension.swift */,
 				24013E1E2511DFA80009C25A /* Main.storyboard */,
 				24013E212511DFAB0009C25A /* Assets.xcassets */,
 				24013E232511DFAB0009C25A /* LaunchScreen.storyboard */,
@@ -225,6 +228,7 @@
 				24013E2D2511E03E0009C25A /* AppleMusicAPI.swift in Sources */,
 				249BB5EF25132DE1005A0355 /* SongTableViewController.swift in Sources */,
 				24177F8A2511E08B00CED18A /* SongModel.swift in Sources */,
+				24899F84261C4D2300C83B56 /* DictionaryExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

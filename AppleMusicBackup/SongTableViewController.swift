@@ -15,11 +15,6 @@ class SongTableViewController: UITableViewController {
 
     var songs: [SongModel] = []
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Apple Music Backup"
-    }
-
     @IBAction func backupAction(_ sender: UIBarButtonItem) {
         SKCloudServiceController.requestAuthorization { [weak self] (status) in
             AppleMusicAPI().fetchAllSongs({ (models) in

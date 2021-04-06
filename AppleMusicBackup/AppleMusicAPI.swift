@@ -31,6 +31,8 @@ class AppleMusicAPI {
     
     func addSongs(_ ids: [String]) {
         checkPermissions()
+        var success = 0
+        let total = ids.count
         DispatchQueue.global(qos: .userInitiated).async {
             SKCloudServiceController().requestUserToken(forDeveloperToken: developerToken) { (receivedToken, error) in
                 guard error == nil else {
@@ -38,16 +40,25 @@ class AppleMusicAPI {
                 }
                 if let token = receivedToken {
                     for id in ids {
-                        let playListURL = "https://api.music.apple.com/v1/me/library?ids[songs]=" + id
+                        let playListURL = AppleMusicAPI.baseURL + "/v1/me/library"
                         var request = URLRequest(url: URL(string: playListURL)!)
                         request.httpMethod = "POST"
                         request.addValue("Bearer \(developerToken)", forHTTPHeaderField: "Authorization")
                         request.addValue(token, forHTTPHeaderField: "Music-User-Token")
+                        let parameter: [String: Any] = [
+                            "ids[songs]": id
+                        ]
+                        request.httpBody = parameter.percentEncoded()
                         URLSession.shared.dataTask(with: request) { (data, response, error) in
-                            print(response)
                             guard error == nil else {
                                 return
                             }
+                            if let httpResponse = response as? HTTPURLResponse {
+                                if httpResponse.statusCode == 202 {
+                                    success += 1
+                                }
+                            }
+                            SVProgressHUD.showProgress(Float(success) / Float(total))
                         }.resume()
                     }
                 }
@@ -83,13 +94,15 @@ class AppleMusicAPI {
                                let json = try? JSON(data: data),
                                let results = (json["data"]).array {
                                 for result in results {
-                                    let id = result.dictionaryValue["id"]?.stringValue
                                     let attributes = result.dictionaryValue["attributes"]?.dictionaryValue
-                                    let name = attributes?["name"]?.stringValue
                                     let artistName = attributes?["artistName"]?.stringValue
                                     let artworkURL = attributes?["artwork"]?.dictionaryValue["url"]?.stringValue
-                                    resultSongs.append(SongModel(id: id ?? "",
-                                                            name: name ?? "",
+                                    guard let id = result.dictionaryValue["attributes"]?.dictionaryValue["playParams"]?.dictionaryValue["catalogId"]?.stringValue,
+                                          let name = attributes?["name"]?.stringValue else {
+                                        continue
+                                    }
+                                    resultSongs.append(SongModel(id: id,
+                                                            name: name,
                                                             artistName: artistName ?? "",
                                                             artworkURL: artworkURL ?? ""))
                                 }

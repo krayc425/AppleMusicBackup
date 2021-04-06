@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="flt-jG-rWT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="flt-jG-rWT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,11 +11,16 @@
         <!--Navigation Controller-->
         <scene sceneID="ncx-Fv-vlj">
             <objects>
-                <navigationController id="flt-jG-rWT" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xPf-jh-DVB">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                <navigationController toolbarHidden="NO" id="flt-jG-rWT" sceneMemberID="viewController">
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="xPf-jh-DVB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OcI-LK-S2e">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="sUH-De-ILT" kind="relationship" relationship="rootViewController" id="7ZF-GL-Fv7"/>
                     </connections>
@@ -24,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="-1213" y="53"/>
         </scene>
-        <!--Song Table View Controller-->
+        <!--Apple Music Backup-->
         <scene sceneID="nSs-uy-Sex">
             <objects>
                 <tableViewController id="sUH-De-ILT" customClass="SongTableViewController" customModule="AppleMusicBackup" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,25 +89,25 @@
                             <outlet property="delegate" destination="sUH-De-ILT" id="AY0-wx-BIk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ZJm-RW-gsp">
-                        <leftBarButtonItems>
-                            <barButtonItem systemItem="refresh" id="aBr-An-qxg">
-                                <connections>
-                                    <action selector="backupAction:" destination="sUH-De-ILT" id="59F-iK-fev"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="action" id="9jl-nn-AWa">
-                                <connections>
-                                    <action selector="exportToJSONAction:" destination="sUH-De-ILT" id="31a-7h-z22"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="pUT-mA-Et4">
+                    <toolbarItems>
+                        <barButtonItem title="Get Songs" id="aBr-An-qxg">
+                            <connections>
+                                <action selector="backupAction:" destination="sUH-De-ILT" id="59F-iK-fev"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Save to File" id="9jl-nn-AWa">
+                            <connections>
+                                <action selector="exportToJSONAction:" destination="sUH-De-ILT" id="31a-7h-z22"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Import from File" id="pUT-mA-Et4">
                             <connections>
                                 <action selector="importFromJSONAction:" destination="sUH-De-ILT" id="jtS-Kj-uIT"/>
                             </connections>
                         </barButtonItem>
-                    </navigationItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Apple Music Backup" id="ZJm-RW-gsp"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gpd-wX-7C6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
