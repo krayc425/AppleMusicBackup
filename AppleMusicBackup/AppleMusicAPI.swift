@@ -61,7 +61,7 @@ class AppleMusicAPI {
                                 }
                             }
                             let progress = Float(success) / Float(total)
-                            print("Progress \(String(format: "%.2f%%", 100 * progress)))")
+                            print("Progress \(String(format: "%.2f%%", 100 * progress))")
                         }.resume()
                     }
                 }
