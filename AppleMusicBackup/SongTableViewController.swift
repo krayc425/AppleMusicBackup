@@ -18,7 +18,6 @@ class SongTableViewController: UITableViewController {
     @IBAction func backupAction(_ sender: UIBarButtonItem) {
         SKCloudServiceController.requestAuthorization { [weak self] (status) in
             AppleMusicAPI().fetchAllSongs({ (models) in
-                print(models.count)
                 self?.songs = models
                 DispatchQueue.main.async {
                     SVProgressHUD.show(withStatus: "Done")
@@ -58,7 +57,6 @@ class SongTableViewController: UITableViewController {
     private func selectFile(_ url: URL) {
         let string = try! String(contentsOf: url)
         let ids = string.split(separator: "\n").map { String($0) }
-        print(ids)
         AppleMusicAPI().addSongs(ids)
     }
 
@@ -87,8 +85,9 @@ extension SongTableViewController: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
         guard controller.documentPickerMode == .open,
             url.startAccessingSecurityScopedResource() else {
-                SVProgressHUD.showError(withStatus: "没有结果")
-                return
+            SVProgressHUD.showError(withStatus: "No result")
+            SVProgressHUD.dismiss(withDelay: 2.0)
+            return
         }
         defer {
             DispatchQueue.main.async {
